@@ -1,0 +1,8 @@
+*body{
+    background-color: yellow;
+    padding-top: 8px;
+
+}
+.navbar, .dashboard-btn{
+    background-color: #021545;
+}
