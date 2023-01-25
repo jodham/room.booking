@@ -8,5 +8,5 @@ urlpatterns = [
     path('', index, name='index'),
     path('dashboard/', dashboard, name='dashboard'),
     path('bookings/<int:pk>', bookings, name='bookings'),
-    path('book/<int:pk>', book, name='book')
+    path('book/<int:pk>', BookRoomView.as_view(), name='book')
 ]
