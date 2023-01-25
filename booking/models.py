@@ -11,6 +11,9 @@ class Room(models.Model):
     description = models.TextField()
     # Images = models.ImageField(null=True, upload_to='room_images')
 
+    def __str__(self):
+        return self.room_name
+
 
 class Boooking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -19,6 +22,7 @@ class Boooking(models.Model):
     time_booked = models.DateTimeField(default=timezone.now)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
+    status = models.BooleanField(default=True)
 
 
 class Institution_details(models.Model):

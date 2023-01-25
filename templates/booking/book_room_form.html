@@ -1,0 +1,58 @@
+{%extends 'base/base.html'%}
+{%block title%}Book Room{%endblock title%}
+{%block content%}
+    <div class="container py-4">
+        <div class="row">
+
+            <div class="col-lg-8 mt-3 ml-5 shadow-lg content-align-center">
+                 <div class="py-5 text-center"><label class="text-info h4">Book Room</label></div>
+                  <div class="container-fluid">
+                      <div class="row shadow-lg justify-content-center">
+                          <div class="col-md-6">
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <fieldset class="from-group">
+
+                                        <div class="row my-4">
+
+                                            <div class="col-6 col-md-6">
+                                                <label for="room">Room</label>
+                                                <input type="text" id="room" value="{{room.room_name}}" name="room_id" class="form-control">
+                                            </div>
+
+                                             <div class="col-6 col-md-6">
+                                                <label for="totalusers">Total Users</label>
+                                                <input type="text" id="totalusers" value="" name="no_of_users" class="form-control">
+                                            </div>
+
+                                        </div>
+
+                                       <div class="row my-4">
+
+                                            <div class="col-6 col-md-6">
+                                                <label for="starttime">Starting time</label>
+                                                <input type="text" id="starttime" value="" name="starttime" class="form-control">
+                                            </div>
+
+                                             <div class="col-6 col-md-6">
+                                                <label for="endtime">Ending time</label>
+                                                <input type="text" id="endtime" value="" name="endtime" class="form-control">
+                                            </div>
+
+                                        </div>
+
+                                    </fieldset>
+                                    <div class="form-group">
+                                        <button class="btn btn-outline-info mt-2" type="submit">Book</button>
+                                    </div>
+                                </form>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+{%endblock content%}

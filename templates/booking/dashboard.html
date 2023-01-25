@@ -27,7 +27,9 @@
                   </div>
               </div>
 
-              <div class="col-12 text-center"><div class="btn btn-success mb-2">View Bookings</div> </div>
+              <div class="col-12 text-center">
+                  <a href="{%url 'bookings' room.id%}" class="btn btn-success mb-2">View Bookings</a>
+              </div>
 
           </div>
         {%endfor%}

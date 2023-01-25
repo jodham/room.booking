@@ -1,0 +1,53 @@
+{%extends 'base/base.html'%}
+{%block title%}bookings{%endblock title%}
+{%block content%}
+    <div class="container py-4">
+
+        <div class="py-5 text-center text-info h4">Bookings</div>
+
+        <div class="row shadow-lg ml-3">
+
+            <div class="col-md-10">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Room name</th>
+                        <th scope="col">Booked by</th>
+                        <th scope="col">Total users</th>
+                        <th scope="col">Start time</th>
+                        <th scope="col">End time</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {%for book in books%}
+                    <tr>
+                        <td>{{book.id}}</td>
+                        <td class="text-capitalize">{{book.room_id}}</td>
+                        <td class="text-capitalize">{{book.user}}</td>
+                        <td>{{book.no_of_users}}</td>
+                        <td>{{book.start_time}}</td>
+                        <td>{{book.end_time}}</td>
+                        <td>{{book.status}}</td>
+                    </tr>
+                    {%endfor%}
+                    </tbody>
+
+                </table>
+            </div>
+
+
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-12 text-center">
+
+                <a href="{%url 'book' room_no%}" class="btn btn-success">book room</a>
+
+            </div>
+        </div>
+
+
+    </div>
+{%endblock content%}
